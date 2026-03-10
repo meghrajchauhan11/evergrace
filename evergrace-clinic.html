@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evergrace Aesthetic Clinic | Where Science Meets Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A24A;
+    --gold-dark: #B38E3E;
+    --brown: #4A3A2F;
+    --beige: #EAD9C8;
+    --cream: #F7F3EE;
+    --text: #1E1E1E;
+    --text-light: #6B5B4E;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid rgba(201,162,74,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 72px;
+    transition: box-shadow 0.3s;
+  }
+
+  nav.scrolled { box-shadow: 0 2px 20px rgba(74,58,47,0.12); }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--cream);
+    border: 1px solid rgba(201,162,74,0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg { width: 28px; height: 28px; }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-name {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-links a.active { color: var(--gold); }
+
+  .btn-nav {
+    background: var(--gold);
+    color: var(--white);
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+
+  .btn-nav:hover { background: var(--gold-dark); }
+
+  /* ===== PAGES ===== */
+  .page { display: none; padding-top: 72px; }
+  .page.active { display: block; }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    padding: 14px 28px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover { background: var(--gold-dark); }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--text);
+    padding: 14px 28px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--text);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background: var(--text);
+    color: var(--white);
+  }
+
+  .btn-outline-white {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+
+  .btn-outline-white:hover {
+    background: var(--white);
+    color: var(--brown);
+  }
+
+  /* ===== HOME PAGE ===== */
+
+  /* Hero */
+  .hero {
+    height: calc(100vh - 72px);
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(247,243,238,0.92) 45%, rgba(247,243,238,0.3) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 620px;
+    animation: fadeInUp 1s ease;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-eyebrow span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 16px 0 8px;
+    font-weight: 300;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Doctor Section */
+  .doctor-section {
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .doctor-img-wrap {
+    position: relative;
+  }
+
+  .doctor-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .doctor-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 24px;
+    background: var(--brown);
+    color: var(--white);
+    padding: 18px 24px;
+    min-width: 200px;
+  }
+
+  .doctor-badge h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .doctor-badge span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .doctor-content { padding-left: 20px; }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-eyebrow svg { width: 16px; height: 16px; color: var(--gold); }
+
+  .section-eyebrow span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .section-body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .doctor-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(201,162,74,0.2);
+  }
+
+  .stat-avatars {
+    display: flex;
+  }
+
+  .stat-avatars img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    margin-left: -8px;
+    object-fit: cover;
+  }
+
+  .stat-avatars img:first-child { margin-left: 0; }
+
+  .stat-count {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -8px;
+    border: 2px solid var(--white);
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  /* Services Section */
+  .services-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    font-size: 13px;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 32px 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(74,58,47,0.12);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .service-icon svg { width: 20px; height: 20px; color: var(--gold); }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .explore-link {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .explore-link:hover { color: var(--gold-dark); }
+
+  .services-footer { text-align: center; margin-top: 20px; }
+
+  /* Why Choose Section */
+  .why-section {
+    background: var(--brown);
+    padding: 100px 60px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .why-left .section-label { color: var(--gold); }
+
+  .why-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .why-left p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .why-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .why-feature {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,162,74,0.2);
+    padding: 28px 24px;
+    transition: background 0.3s;
+  }
+
+  .why-feature:hover { background: rgba(255,255,255,0.1); }
+
+  .why-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,162,74,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .why-feature-icon svg { width: 18px; height: 18px; color: var(--gold); }
+
+  .why-feature h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .why-feature p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Gallery / Transformations */
+  .gallery-section { padding: 100px 60px; }
+
+  .gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--text);
+  }
+
+  .gallery-nav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .gallery-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(74,58,47,0.2);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .gallery-btn:hover { background: var(--gold); border-color: var(--gold); }
+  .gallery-btn:hover svg { color: var(--white); }
+  .gallery-btn svg { width: 14px; height: 14px; color: var(--text); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .gallery-item:hover img { transform: scale(1.08); }
+
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(74,58,47,0);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-item:hover .gallery-item-overlay { background: rgba(74,58,47,0.3); }
+
+  /* Testimonials */
+  .testimonials-section {
+    background: var(--cream);
+    padding: 100px 60px;
+    text-align: center;
+  }
+
+  .quote-icon {
+    font-size: 64px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.4;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+  }
+
+  .testimonials-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--text);
+    margin-bottom: 50px;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: 36px 28px;
+    text-align: left;
+    transition: box-shadow 0.3s;
+  }
+
+  .testimonial-card:hover { box-shadow: 0 8px 30px rgba(74,58,47,0.1); }
+
+  .stars {
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .testimonial-treatment {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* CTA */
+  .cta-section {
+    position: relative;
+    padding: 120px 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .cta-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(74,58,47,0.82);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  footer {
+    background: #2a1f17;
+    padding: 80px 60px 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .footer-logo { margin-bottom: 20px; }
+
+  .footer-brand-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,162,74,0.1);
+  }
+
+  .social-link svg { width: 15px; height: 15px; }
+
+  .footer-col h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-contact-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-contact-item svg {
+    width: 14px;
+    height: 14px;
+    color: var(--gold);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .footer-contact-item span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-bottom-links a:hover { color: var(--gold); }
+
+  /* WhatsApp Float */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 999;
+    width: 52px;
+    height: 52px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+  }
+
+  .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* ===== ABOUT PAGE ===== */
+  .about-hero {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%);
+    padding: 80px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    min-height: 400px;
+  }
+
+  .about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .about-info {
+    padding: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .about-card {
+    border: 1px solid rgba(201,162,74,0.2);
+    padding: 32px;
+    transition: border-color 0.3s;
+  }
+
+  .about-card:hover { border-color: var(--gold); }
+
+  .about-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .about-card p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .about-closing {
+    background: var(--brown);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .about-closing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .about-quotes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .about-quote-pill {
+    background: rgba(201,162,74,0.15);
+    border: 1px solid rgba(201,162,74,0.3);
+    color: var(--gold);
+    padding: 10px 20px;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  /* ===== SERVICES PAGE ===== */
+  .services-page-hero {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .services-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .services-page-hero p {
+    font-size: 14px;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .services-page-section { padding: 60px 80px; }
+
+  .services-page-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  .services-page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-detail-card {
+    border: 1px solid rgba(201,162,74,0.15);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .service-detail-card:hover {
+    box-shadow: 0 12px 40px rgba(74,58,47,0.12);
+    transform: translateY(-4px);
+  }
+
+  .service-detail-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-detail-body { padding: 24px; }
+
+  .service-detail-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .service-detail-body p {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .service-benefits {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .service-benefits li {
+    font-size: 11px;
+    color: var(--text-light);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .service-benefits li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== GALLERY PAGE ===== */
+  .gallery-page-hero {
+    background: var(--cream);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .gallery-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .gallery-page-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .gallery-page-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+  }
+
+  .gallery-page-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .gallery-page-item:hover img { transform: scale(1.1); }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(74,58,47,0);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .gallery-page-item:hover .gallery-overlay {
+    opacity: 1;
+    background: rgba(74,58,47,0.4);
+  }
+
+  .gallery-overlay span {
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.active { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 72px);
+  }
+
+  .contact-info {
+    background: var(--brown);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-info .section-label { color: var(--gold); margin-bottom: 12px; }
+
+  .contact-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    color: var(--white);
+    margin-bottom: 40px;
+    line-height: 1.25;
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+
+  .contact-detail-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(201,162,74,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-icon svg { width: 18px; height: 18px; color: var(--gold); }
+
+  .contact-detail-text h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail-text p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  .map-embed {
+    margin-top: 40px;
+    width: 100%;
+    height: 200px;
+    border: 0;
+    opacity: 0.8;
+  }
+
+  .contact-form-wrap {
+    padding: 80px 60px;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-form-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .contact-form-wrap p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--white);
+    border: 1px solid rgba(201,162,74,0.2);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .success-msg {
+    display: none;
+    background: rgba(201,162,74,0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 16px 20px;
+    font-size: 13px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* LOGO SVG */
+  .logo-svg-path { fill: var(--gold); }
+
+  /* Divider */
+  .gold-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="logo" onclick="showPage('home')">
+    <div class="logo-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4C20 4 14 10 14 18C14 22.4 16.8 26.1 20 27.5C23.2 26.1 26 22.4 26 18C26 10 20 4 20 4Z" fill="#C9A24A" opacity="0.8"/>
+        <path d="M12 14C12 14 6 18 6 24C6 28.4 9.6 32 14 32C16 32 17.8 31.2 19.2 30C15.6 28.4 12 24.4 12 20C12 18 12.4 15.8 12 14Z" fill="#C9A24A" opacity="0.5"/>
+        <path d="M28 14C28 14 34 18 34 24C34 28.4 30.4 32 26 32C24 32 22.2 31.2 20.8 30C24.4 28.4 28 24.4 28 20C28 18 27.6 15.8 28 14Z" fill="#C9A24A" opacity="0.5"/>
+        <path d="M20 28C20 28 16 32 16 36L24 36C24 32 20 28 20 28Z" fill="#C9A24A" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-name">EVERGRACE</span>
+      <span class="logo-sub">Aesthetic Clinic</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('gallery')" id="nav-gallery">Gallery</a></li>
+  </ul>
+
+  <a class="btn-nav" onclick="showPage('contact')">Book Appointment</a>
+</nav>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/919876543210" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M11.99 2C6.484 2 2 6.484 2 11.99c0 1.927.533 3.73 1.459 5.267L2.018 22l4.83-1.418A9.946 9.946 0 0 0 11.99 22c5.506 0 9.99-4.484 9.99-9.99S17.496 2 11.99 2zm0 18.18a8.19 8.19 0 0 1-4.163-1.136l-.3-.178-3.09.907.924-3.006-.196-.31A8.178 8.178 0 0 1 3.82 11.99c0-4.513 3.668-8.18 8.17-8.18 4.503 0 8.17 3.667 8.17 8.18s-3.667 8.19-8.17 8.19z"/>
+  </svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span>Where Science Meets Beauty 👩‍⚕️</span>
+      </div>
+      <h1>Refined Beauty &<br><em>Radiant Confidence</em></h1>
+      <p class="hero-sub">Advanced Skin, Hair &amp; Laser Treatments</p>
+      <p class="hero-tagline">Your Glow, Our Goal 💉</p>
+      <div class="hero-btns">
+        <a class="btn-primary" onclick="showPage('contact')">Book Appointment</a>
+        <a class="btn-outline" onclick="showPage('services')">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Section -->
+  <section style="padding: 100px 0; background: var(--white);">
+    <div class="doctor-section">
+      <div class="doctor-img-wrap animate-in">
+        <img class="doctor-img" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Dr. Nidhi Merh">
+        <div class="doctor-badge">
+          <h4>Dr. Nidhi Merh</h4>
+          <span>Founder &amp; Lead Specialist</span>
+        </div>
+      </div>
+      <div class="doctor-content animate-in">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>The Expert Behind The Glow</span>
+        </div>
+        <h2 class="section-title">Elevating your natural beauty with precision.</h2>
+        <p class="section-body">Evergrace Aesthetic Clinic is a dedicated sanctuary in Fatehgunj, Vadodara, offering high-quality, advanced aesthetic and dermatological care. Led by Dr. Nidhi Merh, a renowned Skin, Hair &amp; Laser Specialist, we bring together medical expertise and artistic vision.</p>
+        <p class="section-body">Our team of professionals is highly skilled and committed to providing top-notch treatments, procedures, and aesthetic services tailored to your unique needs. We believe in safe, effective, and personalized care that enhances your well-being and confidence.</p>
+        <div class="doctor-stats">
+          <div class="stat-avatars">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&q=80" alt="">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&q=80" alt="">
+            <div class="stat-count">5k+</div>
+          </div>
+          <span class="stat-label">Happy Patients Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="section-header animate-in">
+      <p class="section-label">Our Expertise</p>
+      <h2>Signature Treatments</h2>
+      <p>Discover our comprehensive range of advanced skin, hair, and laser therapies designed to rejuvenate and restore.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <h3>BB Glow Treatment</h3>
+        <p>Achieve a flawless, radiant complexion with our semi-permanent BB treatment for glowing skin.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <h3>Chemical Peel</h3>
+        <p>Exfoliate and rejuvenate your skin, reducing fine lines, acne scars, and uneven tone effectively.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>Laser Hair Removal</h3>
+        <p>Experience long-lasting smoothness with our advanced, pain-free laser hair removal treatments.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Acne Treatment</h3>
+        <p>Targeted therapies to clear breakouts, reduce inflammation, and restore healthy skin balance.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Skin Brightening</h3>
+        <p>Restore your natural glow and combat dullness with our advanced skin brightening protocols.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Anti-Aging Therapy</h3>
+        <p>Turn back time with treatments that boost collagen, reduce wrinkles, and restore youthful skin.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>
+        </div>
+        <h3>Hair Fall Treatment</h3>
+        <p>Effective solutions including PRP to stimulate follicles and promote healthy hair regrowth.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+      <div class="service-card animate-in">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        </div>
+        <h3>Pigmentation Treatment</h3>
+        <p>Advanced laser and peel options to fade dark spots, melasma, and uneven skin tone safely.</p>
+        <a class="explore-link" onclick="showPage('services')">Explore →</a>
+      </div>
+    </div>
+    <div class="services-footer">
+      <a class="btn-outline" onclick="showPage('services')">View All Treatments</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-section">
+    <div class="why-grid">
+      <div class="why-left animate-in">
+        <p class="section-label">The Evergrace Difference</p>
+        <h2>Excellence in every detail of your care.</h2>
+        <p>We blend medical rigor with aesthetic artistry to deliver results that look natural and feel transformative. Your safety, comfort, and satisfaction are our absolute priorities.</p>
+        <a class="btn-primary" onclick="showPage('contact')">Consult With Us</a>
+      </div>
+      <div class="why-features animate-in">
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h4>Advanced Technology</h4>
+          <p>Utilizing FDA-approved, state-of-the-art equipment for precise and effective results.</p>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Certified Specialist</h4>
+          <p>Expert care administered by a highly qualified and experienced dermatologist.</p>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Safe &amp; Hygienic</h4>
+          <p>Strict adherence to international medical protocols and sterilization standards.</p>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Personalized Care</h4>
+          <p>Bespoke treatment plans designed specifically for your unique skin type and goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Transformations -->
+  <section class="gallery-section">
+    <div class="gallery-header animate-in">
+      <div>
+        <p class="section-label" style="margin-bottom:8px;">Real Results</p>
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);color:var(--text);">Transformations</h2>
+      </div>
+      <div class="gallery-nav">
+        <button class="gallery-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="gallery-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Treatment Result">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Treatment Result">
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Treatment Result">
+        <div class="gallery-item-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="quote-icon">"</div>
+    <h2>Patient Stories</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate-in">
+        <div class="stars">★★★★★</div>
+        <p>"Dr. Nidhi is incredible. I struggled with severe pigmentation for years, and after just a few sessions of her recommended treatment, my skin has never looked clearer. The clinic feels like a luxury spa."</p>
+        <div class="testimonial-name">Aarti P.</div>
+        <div class="testimonial-treatment">Pigmentation Treatment</div>
+      </div>
+      <div class="testimonial-card animate-in">
+        <div class="stars">★★★★★</div>
+        <p>"I was nervous about laser hair removal, but the staff at Evergrace made me feel so comfortable. It was virtually painless and the results have been life-changing. Highly recommend their services."</p>
+        <div class="testimonial-name">Priya S.</div>
+        <div class="testimonial-treatment">Laser Hair Removal</div>
+      </div>
+      <div class="testimonial-card animate-in">
+        <div class="stars">★★★★★</div>
+        <p>"The BB Glow treatment gave me the exact result I was hoping for. My skin looks airbrushed even without makeup. The clinic's hygiene standards and Dr. Nidhi's expertise are truly commendable."</p>
+        <div class="testimonial-name">Neha D.</div>
+        <div class="testimonial-treatment">BB Glow Facial</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-content animate-in">
+      <h2>Ready for radiant skin?</h2>
+      <p>Begin your journey to flawless skin and restored confidence today. Schedule your personalized consultation.</p>
+      <a class="btn-primary" onclick="showPage('contact')">Book Your Appointment</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:44px;height:44px;background:rgba(201,162,74,0.1);border:1px solid rgba(201,162,74,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 40 40" width="24" height="24" fill="none"><path d="M20 4C20 4 14 10 14 18C14 22.4 16.8 26.1 20 27.5C23.2 26.1 26 22.4 26 18C26 10 20 4 20 4Z" fill="#C9A24A" opacity="0.8"/><path d="M12 14C12 14 6 18 6 24C6 28.4 9.6 32 14 32C16 32 17.8 31.2 19.2 30C15.6 28.4 12 24.4 12 20C12 18 12.4 15.8 12 14Z" fill="#C9A24A" opacity="0.5"/><path d="M28 14C28 14 34 18 34 24C34 28.4 30.4 32 26 32C24 32 22.2 31.2 20.8 30C24.4 28.4 28 24.4 28 20C28 18 27.6 15.8 28 14Z" fill="#C9A24A" opacity="0.5"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:#fff;">EVERGRACE</div>
+              <div style="font-size:9px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;">Aesthetic Clinic</div>
+            </div>
+          </div>
+        </div>
+        <p class="footer-brand-text">Where Science Meets Beauty. Advanced dermatology and aesthetic care delivered with precision and grace in Vadodara.</p>
+        <div class="social-links">
+          <a class="social-link" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a class="social-link" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a class="social-link" href="https://wa.me/919876543210" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.864 9.864 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM11.99 2C6.484 2 2 6.484 2 11.99c0 1.927.533 3.73 1.459 5.267L2.018 22l4.83-1.418A9.946 9.946 0 0 0 11.99 22c5.506 0 9.99-4.484 9.99-9.99S17.496 2 11.99 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About Clinic</a></li>
+          <li><a onclick="showPage('services')">Our Services</a></li>
+          <li><a onclick="showPage('gallery')">Before &amp; After</a></li>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Treatments</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('services')">Skin Brightening</a></li>
+          <li><a onclick="showPage('services')">Laser Hair Removal</a></li>
+          <li><a onclick="showPage('services')">Anti-Aging Therapy</a></li>
+          <li><a onclick="showPage('services')">Acne Solutions</a></li>
+          <li><a onclick="showPage('services')">Hair Fall Treatment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Clinic</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>First floor Biren, 7 Seas Mall, Abbas Tyabji Rd, Jayesh Colony, Fatehgunj, Vadodara, Gujarat 390002</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon – Sun: 10:00 AM – 7:00 PM</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+91 98765 43210</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Evergrace Aesthetic Clinic. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ==================== ABOUT PAGE ==================== -->
+<div id="page-about" class="page">
+  <section class="about-hero">
+    <div class="animate-in">
+      <p class="section-label" style="margin-bottom:12px;">About Us</p>
+      <h1>A Sanctuary for Advanced Aesthetic Care</h1>
+      <p>Evergrace Aesthetic Clinic is a dedicated clinic in Fatehgunj, Vadodara, that offers high-quality healthcare services to patients of all ages. Our clinic's team of professionals is highly skilled and well-versed in their respective domains.</p>
+      <p>Patients can expect to receive top-notch treatments, procedures, and aesthetic services. We provide comprehensive services to support patient health and well-being, with a variety of packages tailored to patients' needs and budget.</p>
+      <a class="btn-primary" style="margin-top:8px;" onclick="showPage('contact')">Book Consultation</a>
+    </div>
+    <div class="animate-in">
+      <img class="about-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Evergrace Clinic">
+    </div>
+  </section>
+
+  <div class="about-info">
+    <div class="animate-in">
+      <p class="section-label">Our Mission</p>
+      <h2 class="section-title">Dedicated to Your Beauty &amp; Well-Being</h2>
+      <p class="section-body" style="max-width:700px;">At Evergrace, we believe that true beauty is a reflection of health, confidence, and self-care. Our state-of-the-art clinic combines the latest medical advancements with personalised care to help you look and feel your absolute best.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card animate-in">
+        <h3>Our Vision</h3>
+        <p>To be Vadodara's most trusted aesthetic clinic, empowering every patient with safe, effective treatments that celebrate their natural beauty.</p>
+      </div>
+      <div class="about-card animate-in">
+        <h3>Dr. Nidhi Merh</h3>
+        <p>A certified Skin, Hair &amp; Laser Specialist with years of experience, Dr. Merh combines clinical precision with artistic sensibility to deliver transformative results.</p>
+      </div>
+      <div class="about-card animate-in">
+        <h3>Our Approach</h3>
+        <p>Every patient receives a thorough consultation and a bespoke treatment plan, ensuring the highest standard of personalised care from start to finish.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="about-closing">
+    <p class="section-label" style="margin-bottom:16px;">Experience Refined Beauty</p>
+    <h2>Your destination for advanced<br>skin, face, and body treatments.</h2>
+    <div class="about-quotes">
+      <span class="about-quote-pill">Where Science Meets Beauty</span>
+      <span class="about-quote-pill">Your Glow, Our Goal</span>
+      <span class="about-quote-pill">Aesthetic Care with a Touch of Grace</span>
+      <span class="about-quote-pill">Shine with Evergrace</span>
+    </div>
+    <a class="btn-primary" onclick="showPage('contact')">Book Your Appointment</a>
+  </section>
+
+  <!-- Re-use footer from home -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:44px;height:44px;background:rgba(201,162,74,0.1);border:1px solid rgba(201,162,74,0.3);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 40 40" width="24" height="24" fill="none"><path d="M20 4C20 4 14 10 14 18C14 22.4 16.8 26.1 20 27.5C23.2 26.1 26 22.4 26 18C26 10 20 4 20 4Z" fill="#C9A24A" opacity="0.8"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:#fff;">EVERGRACE</div>
+              <div style="font-size:9px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;">Aesthetic Clinic</div>
+            </div>
+          </div>
+        </div>
+        <p class="footer-brand-text">Where Science Meets Beauty. Advanced dermatology and aesthetic care delivered with precision and grace in Vadodara.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About Clinic</a></li>
+          <li><a onclick="showPage('services')">Our Services</a></li>
+          <li><a onclick="showPage('gallery')">Before &amp; After</a></li>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Treatments</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('services')">BB Glow Treatment</a></li>
+          <li><a onclick="showPage('services')">Chemical Peel</a></li>
+          <li><a onclick="showPage('services')">Laser Hair Removal</a></li>
+          <li><a onclick="showPage('services')">Acne Treatment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Clinic</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>First floor Biren, 7 Seas Mall, Abbas Tyabji Rd, Fatehgunj, Vadodara 390002</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon – Sun: 10:00 AM – 7:00 PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Evergrace Aesthetic Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ==================== SERVICES PAGE ==================== -->
+<div id="page-services" class="page">
+  <div class="services-page-hero">
+    <p class="section-label" style="margin-bottom:12px;">Our Expertise</p>
+    <h1>Advanced Treatments &amp; Therapies</h1>
+    <p>Comprehensive skin, hair, and laser services tailored to your unique beauty goals.</p>
+  </div>
+
+  <!-- Skin -->
+  <div class="services-page-section">
+    <h2>Skin Treatments</h2>
+    <div class="services-page-grid">
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Acne Treatment">
+        <div class="service-detail-body">
+          <h3>Acne Treatment</h3>
+          <p>Targeted medical-grade therapies to clear stubborn breakouts, reduce inflammation, and prevent future scarring for clear, healthy skin.</p>
+          <ul class="service-benefits">
+            <li>Reduces active breakouts fast</li>
+            <li>Minimizes pore size</li>
+            <li>Prevents scarring</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Pigmentation Treatment">
+        <div class="service-detail-body">
+          <h3>Pigmentation Treatment</h3>
+          <p>Advanced laser and chemical peel options designed to fade dark spots, melasma, sunburn, and uneven skin tone safely and effectively.</p>
+          <ul class="service-benefits">
+            <li>Fades dark spots &amp; melasma</li>
+            <li>Evens skin tone</li>
+            <li>Boosts natural radiance</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Chemical Peels">
+        <div class="service-detail-body">
+          <h3>Chemical Peels</h3>
+          <p>Customized chemical exfoliation treatments that resurface skin, reduce fine lines, and reveal a brighter, more youthful complexion.</p>
+          <ul class="service-benefits">
+            <li>Deep exfoliation</li>
+            <li>Reduces fine lines</li>
+            <li>Improves skin texture</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="BB Glow Facial">
+        <div class="service-detail-body">
+          <h3>BB Glow Facial</h3>
+          <p>A revolutionary semi-permanent treatment that infuses skin with brightening serums for a flawless, airbrushed glow that lasts weeks.</p>
+          <ul class="service-benefits">
+            <li>Semi-permanent glow</li>
+            <li>Reduces redness</li>
+            <li>No-makeup look</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Skin Brightening">
+        <div class="service-detail-body">
+          <h3>Skin Brightening</h3>
+          <p>Powerful brightening protocols combining serums, peels, and light therapy to restore your natural luminosity and combat dullness.</p>
+          <ul class="service-benefits">
+            <li>Restores natural glow</li>
+            <li>Reduces dullness</li>
+            <li>Vitamin infusion</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Anti Aging">
+        <div class="service-detail-body">
+          <h3>Anti Aging Therapy</h3>
+          <p>Cutting-edge collagen-stimulating treatments to smooth wrinkles, restore facial volume, and turn back the visible signs of aging.</p>
+          <ul class="service-benefits">
+            <li>Stimulates collagen</li>
+            <li>Reduces fine lines</li>
+            <li>Firms and lifts skin</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hair -->
+  <div class="services-page-section" style="background:var(--cream);">
+    <h2>Hair Treatments</h2>
+    <div class="services-page-grid">
+      <div class="service-detail-card" style="background:white;">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair Fall">
+        <div class="service-detail-body">
+          <h3>Hair Fall Treatment</h3>
+          <p>Comprehensive assessment and targeted treatments to address the root cause of hair fall and stimulate healthy regrowth.</p>
+          <ul class="service-benefits">
+            <li>Reduces hair shedding</li>
+            <li>Strengthens follicles</li>
+            <li>Promotes regrowth</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card" style="background:white;">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="PRP Hair">
+        <div class="service-detail-body">
+          <h3>PRP Hair Therapy</h3>
+          <p>Platelet-Rich Plasma therapy harnesses your body's natural growth factors to revitalize dormant follicles and restore density.</p>
+          <ul class="service-benefits">
+            <li>Natural growth factors</li>
+            <li>Thickens existing hair</li>
+            <li>Minimal downtime</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card" style="background:white;">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Hair Regrowth">
+        <div class="service-detail-body">
+          <h3>Hair Regrowth Therapy</h3>
+          <p>Multi-step treatment program combining mesotherapy, laser stimulation, and nutritional support for visible hair density improvement.</p>
+          <ul class="service-benefits">
+            <li>Visible density improvement</li>
+            <li>Scalp nourishment</li>
+            <li>Long-lasting results</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Laser -->
+  <div class="services-page-section">
+    <h2>Laser Treatments</h2>
+    <div class="services-page-grid">
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Laser Hair Removal">
+        <div class="service-detail-body">
+          <h3>Laser Hair Removal</h3>
+          <p>FDA-approved diode laser technology for permanent hair reduction on all skin types, delivering smooth, hair-free skin year-round.</p>
+          <ul class="service-benefits">
+            <li>Permanent reduction</li>
+            <li>All skin types</li>
+            <li>Virtually painless</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Laser Skin Rejuvenation">
+        <div class="service-detail-body">
+          <h3>Laser Skin Rejuvenation</h3>
+          <p>Non-ablative laser therapy that stimulates collagen production, reduces pores, and improves overall skin tone and texture.</p>
+          <ul class="service-benefits">
+            <li>Boosts collagen</li>
+            <li>Reduces pores</li>
+            <li>No downtime</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+      <div class="service-detail-card">
+        <img class="service-detail-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Laser Pigmentation">
+        <div class="service-detail-body">
+          <h3>Laser Pigmentation Removal</h3>
+          <p>Targeted Q-switched laser treatments that break down excess melanin to safely remove stubborn pigmentation and age spots.</p>
+          <ul class="service-benefits">
+            <li>Targets excess melanin</li>
+            <li>Safe for all tones</li>
+            <li>Precise treatment</li>
+          </ul>
+          <a class="btn-primary" style="font-size:10px;padding:10px 20px;" onclick="showPage('contact')">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-text">Where Science Meets Beauty. Advanced dermatology and aesthetic care in Vadodara.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div></div>
+      <div>
+        <h4>Visit Clinic</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;color:var(--gold);flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>First floor Biren, 7 Seas Mall, Fatehgunj, Vadodara 390002</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Evergrace Aesthetic Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ==================== GALLERY PAGE ==================== -->
+<div id="page-gallery" class="page">
+  <div class="gallery-page-hero">
+    <p class="section-label" style="margin-bottom:12px;">Real Results</p>
+    <h1>Before &amp; After Gallery</h1>
+    <p>Witness real transformations from real patients at Evergrace Aesthetic Clinic.</p>
+  </div>
+  <div class="gallery-page-grid">
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80" alt="Skin Treatment Result">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80" alt="Laser Treatment Result">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Hair Treatment Result">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" alt="Facial Treatment">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Clinic Interior">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80" alt="Treatment Result">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&q=80" alt="Doctor Consultation">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=800&q=80" alt="Skin Glow">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+    <div class="gallery-page-item" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" alt="Treatment Process">
+      <div class="gallery-overlay"><span>View</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-text">Where Science Meets Beauty. Advanced dermatology and aesthetic care in Vadodara.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('services')">Services</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div></div>
+      <div>
+        <h4>Visit Clinic</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;color:var(--gold);flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>First floor Biren, 7 Seas Mall, Fatehgunj, Vadodara 390002</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 Evergrace Aesthetic Clinic. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div id="page-contact" class="page">
+  <div class="contact-page">
+    <div class="contact-info">
+      <p class="section-label">Get In Touch</p>
+      <h1>Book Your Consultation</h1>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Address</h4>
+          <p>First floor Biren, 7 Seas Mall<br>Abbas Tyabji Rd, Jayesh Colony<br>Fatehgunj, Vadodara, Gujarat 390002</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Working Hours</h4>
+          <p>Monday – Sunday<br>10:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Phone</h4>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <h4>Email</h4>
+          <p>info@evergraceaesthetic.com</p>
+        </div>
+      </div>
+
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.4!2d73.192!3d22.319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5c899cbe741%3A0x7eb3a93c6c1d96dc!2s7%20Seas%20Mall%2C%20Fatehgunj%2C%20Vadodara!5e0!3m2!1sen!2sin!4v1234567890"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h2>Book an Appointment</h2>
+      <p>Fill in the form below and our team will contact you shortly to confirm your booking.</p>
+
+      <div id="form-container">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="fname" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="femail" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Treatment Interested In *</label>
+          <select id="ftreatment">
+            <option value="">Select a treatment</option>
+            <option>BB Glow Treatment</option>
+            <option>Chemical Peel</option>
+            <option>Laser Hair Removal</option>
+            <option>Acne Treatment</option>
+            <option>Skin Brightening</option>
+            <option>Anti-Aging Therapy</option>
+            <option>Hair Fall Treatment</option>
+            <option>PRP Hair Therapy</option>
+            <option>Pigmentation Treatment</option>
+            <option>Laser Skin Rejuvenation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date" id="fdate">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="fmessage" placeholder="Any additional information or concerns..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;text-align:center;" onclick="submitForm()">Book Appointment</button>
+        <div class="success-msg" id="success-msg">
+          ✓ &nbsp; Thank you! Our clinic will contact you shortly.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-text">Where Science Meets Beauty. Advanced dermatology and aesthetic care in Vadodara.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('services')">Services</a></li>
+          <li><a onclick="showPage('gallery')">Gallery</a></li>
+        </ul>
+      </div>
+      <div></div>
+      <div>
+        <h4>Visit Clinic</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;color:var(--gold);flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>First floor Biren, 7 Seas Mall, Fatehgunj, Vadodara 390002</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 Evergrace Aesthetic Clinic. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<script>
+  // Page navigation
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    initAnimations();
+  }
+
+  // Sticky navbar
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll animations
+  function initAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-in:not(.visible)').forEach(el => observer.observe(el));
+  }
+
+  document.addEventListener('DOMContentLoaded', initAnimations);
+
+  // Lightbox
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  // Form submit
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('fname').value = '';
+    document.getElementById('fphone').value = '';
+    document.getElementById('femail').value = '';
+    document.getElementById('ftreatment').value = '';
+    document.getElementById('fmessage').value = '';
+    setTimeout(() => { document.getElementById('success-msg').style.display = 'none'; }, 5000);
+  }
+</script>
+</body>
+</html>
